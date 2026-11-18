@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:siajag/controllers/login_controller.dart';
+import '../binding/dashboard.dart';
 import '../pages/login_page.dart';
 import '../pages/register_page.dart';
 import '../pages/dashboard_page.dart';
@@ -11,9 +11,6 @@ class AppPages {
     GetPage(
       name: '/login',
       page: () => const LoginPage(),
-      binding: BindingsBuilder(() {
-        Get.lazyPut<LoginController>(() => LoginController());
-      }),
     ),
     GetPage(
       name: '/register',
@@ -22,6 +19,7 @@ class AppPages {
     GetPage(
       name: '/dashboard',
       page: () => const DashboardPage(),
+      binding: DashboardBinding(),
     ),
   ];
 }
